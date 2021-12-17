@@ -13,7 +13,25 @@ const trendsReducer = (state,action)=>{
         isLoading: true,
         isError: false
       };
+    case "FETCH_SUCCESS":
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        data: action.payload
+      };
+    case "FETCH_FAILURE":
+      return {
+        ...state,
+        isLoading: false,
+        isError: true
+      };
     default:
       throw new Error();      
 	}
 };
+
+const List = ({ list }) =>
+  list.map((item) => (
+    <Item key={item.url} item={item} />
+  ));
