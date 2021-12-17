@@ -141,6 +141,25 @@ function MainPage() {
     </form>
   </div>
   <hr/>
+      {/* {trends.isLoading ? (<p>Loading...</p>) : (console.log(trends.data))} */}
+      <div className="container">
+        { trends.isError &&
+          (<div className="message is-danger">
+            <div className="message-body">
+              <p>Something went wrong...</p>
+            </div>
+          </div>)
+        }
+        {trends.isLoading ? (
+          <div className="message is-info">
+            <div className="message-body">
+              <p>Loading...</p>
+            </div>
+          </div>
+        ) : (
+          <List list={trends.data} />
+        )}
+      </div>
 
   )
 
