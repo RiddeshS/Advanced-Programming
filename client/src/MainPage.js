@@ -66,7 +66,7 @@ const Item = ({ item }) => {
 function MainPage() {
 	const [url, setUrl]=useState('${API_ENDPOINT}${TRENDS}${LOCATION_ID}');
 	const [location, setLocation]=useState(LOCATION_ID);
-	const [trends, dispatchTrends]=useReducer(trendsReducer{
+	const [trends, dispatchTrends]=useReducer(trendsReducer,{
 		data: [],
 		isLoading: true,
 		isError: false
@@ -101,6 +101,22 @@ function MainPage() {
   const handleChange = event => {
     setLocation(event.target.value)
   }
+
+  return(
+    <div>
+      <section className="hero is-primary">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title">
+              Twitter Trends
+            </h1>
+          </div>
+        </div>
+      </section>
+      <br/>
+    </div>
+
+  )
 
 }
 
