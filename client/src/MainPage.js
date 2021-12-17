@@ -71,6 +71,28 @@ function MainPage() {
 		isLoading: true,
 		isError: false
 	});
+
+	  const handleFormSubmit = (event) => {
+    setUrl(`${API_ENDPOINT}${TRENDS}${location}`);
+    event.preventDefault();
+  }
+
+  const handleFetchTrends = useCallback(async () => {
+    dispatchTrends({ type: "FETCH_INIT" });
+
+    const result = await axios.get(url);
+    console.log(result.data);
+
+    try {
+      dispatchTrends({
+        type: "FETCH_SUCCESS",
+        payload: result.data[0].trends
+      });
+    } catch {
+      dispatchTrends({ type: "FETCH_FAILURE" });
+    }
+  }, [url]);
+  
 }
 
 
