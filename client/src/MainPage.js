@@ -37,7 +37,30 @@ const List = ({ list }) =>
   ));
 
 
-
+const Item = ({ item }) => {
+  return (
+    <a href={item.url}>
+    <div className="box">
+      <div className="media-content">
+        <p><strong>{item.name}</strong>
+           <br/>
+          {item.tweet_volume ? (
+            <span>
+              <small>Tweet Volume</small><br/>
+              <span className="tag is-link">{item.tweet_volume}</span>
+            </span>
+          ) : (
+            <span>
+              <small>Tweet Volume</small><br/>
+              <span className="tag is-warning">Not Available</span>
+            </span>
+          )}
+        </p>
+      </div>
+    </div>
+    </a>
+  );
+};
 
 
 function MainPage() {
