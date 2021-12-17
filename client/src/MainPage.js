@@ -7,6 +7,13 @@ const LOCATION_ID = "1"
 
 const trendsReducer = (state,action)=>{
 	switch(action.type){
-
+    case "FETCH_INIT":
+      return {
+        ...state,
+        isLoading: true,
+        isError: false
+      };
+    default:
+      throw new Error();      
 	}
 };
