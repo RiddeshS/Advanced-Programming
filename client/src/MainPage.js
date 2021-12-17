@@ -92,7 +92,16 @@ function MainPage() {
       dispatchTrends({ type: "FETCH_FAILURE" });
     }
   }, [url]);
-  
+
+
+    useEffect(() => {
+    handleFetchTrends();
+  }, [handleFetchTrends]);
+
+  const handleChange = event => {
+    setLocation(event.target.value)
+  }
+
 }
 
 
