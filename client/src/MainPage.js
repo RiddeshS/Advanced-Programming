@@ -114,7 +114,6 @@ function MainPage() {
         </div>
       </section>
       <br/>
-    </div>
     <div className="container">
     <form onSubmit={handleFormSubmit}>
       <div className="field has-addons">
@@ -160,9 +159,11 @@ function MainPage() {
           <List list={trends.data} />
         )}
       </div>
+    </div>
 
-  )
+  );
 
 }
+export default MainPage;
 
 
