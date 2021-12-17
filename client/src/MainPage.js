@@ -115,6 +115,32 @@ function MainPage() {
       </section>
       <br/>
     </div>
+    <div className="container">
+    <form onSubmit={handleFormSubmit}>
+      <div className="field has-addons">
+        <div className="control is-expanded">
+          <div className="select is-fullwidth">
+            <select 
+              name="location" 
+              value={location} 
+              onChange={handleChange}
+            >
+              <option value="1">WorldWide</option>
+              <option value="23424848">India</option>
+              <option value="23424977">United States of America</option>
+              <option value="23424975">United Kingdom</option>
+              <option value="23424948">Singapore</option>
+              <option value="23424856">Japan</option>
+            </select>
+          </div>
+        </div>
+        <div className="control">
+          <button type="submit" className="button is-primary">Get Trends</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr/>
 
   )
 
