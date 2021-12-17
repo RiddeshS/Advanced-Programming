@@ -35,3 +35,19 @@ const List = ({ list }) =>
   list.map((item) => (
     <Item key={item.url} item={item} />
   ));
+
+
+
+
+
+function MainPage() {
+	const [url, setUrl]=useState('${API_ENDPOINT}${TRENDS}${LOCATION_ID}');
+	const [location, setLocation]=useState(LOCATION_ID);
+	const [trends, dispatchTrends]=useReducer(trendsReducer{
+		data: [],
+		isLoading: true,
+		isError: false
+	});
+}
+
+
